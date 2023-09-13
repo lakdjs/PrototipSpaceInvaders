@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AmmoSystem
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class Bullet : MonoBehaviour
     {
         [SerializeField] private float speed;

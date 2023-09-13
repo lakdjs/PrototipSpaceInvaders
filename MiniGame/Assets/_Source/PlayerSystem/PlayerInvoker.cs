@@ -22,5 +22,6 @@ namespace PlayerSystem
         {
             _playerShooting.Shoot(_player.FirePoint, _player.BulletPrefab);
         }
+        
     }
 }
