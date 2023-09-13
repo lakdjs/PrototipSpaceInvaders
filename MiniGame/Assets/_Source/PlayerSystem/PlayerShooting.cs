@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace PlayerSystem
 {
     public class PlayerShooting 
     {
-        public void Shoot()
+        public void Shoot(Transform firePoint, GameObject bulletPrefab)
         {
-            
+            GameObject bullet = GameObject.Instantiate(bulletPrefab,firePoint);
         }
     }
 }

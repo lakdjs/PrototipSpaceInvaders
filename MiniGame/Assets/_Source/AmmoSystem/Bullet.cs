@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace AmmoSystem
 {
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(Rigidbody))]
+    public class Bullet : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private float speed;
+        [SerializeField] private float destroyTime;
+        private Rigidbody _rb;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void Start()
+        {
+            _rb = GetComponent<Rigidbody>();
+            _rb.useGravity = false;
+            Destroy(gameObject, destroyTime);
+        }
+        private void Update()
+        {
+            Fly();
+        }
+
+        void Fly()
+        {
+            _rb.velocity = transform.up * speed;
+        }
         
+        private void OnCollisionEnter(Collision collision)
+        {
+            Destroy(gameObject);
+        }
     }
 }
