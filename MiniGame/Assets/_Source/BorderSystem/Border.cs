@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace BoarderSystem
+namespace BorderSystem
 {
-    public class Boarder : MonoBehaviour
+    public class Border : MonoBehaviour
     {
         [SerializeField] private Transform[] boarders;
         [SerializeField] private float boarder1;

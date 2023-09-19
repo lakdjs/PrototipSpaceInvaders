@@ -11,7 +11,7 @@ namespace PlayerSystem
         [field: SerializeField] public Rigidbody Rb { get; private set; }
         [field: SerializeField] public GameObject BulletPrefab { get; private set; }
         [field: SerializeField] public Transform FirePoint { get; private set; }
-        
+        public int Kills { get; private set; }
     }
 }
 
