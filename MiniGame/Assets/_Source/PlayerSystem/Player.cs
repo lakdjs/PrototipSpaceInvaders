@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PlayerSystem
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody))]
     public class Player : MonoBehaviour
     {
         [field: SerializeField] public float MovementSpeed { get; private set; }

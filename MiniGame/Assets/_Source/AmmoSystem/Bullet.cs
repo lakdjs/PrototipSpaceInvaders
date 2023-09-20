@@ -1,15 +1,16 @@
 using System;
 using ScoreSystem;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace AmmoSystem
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody))]
     public class Bullet : MonoBehaviour
     {
         [SerializeField] private float speed;
         [SerializeField] private float destroyTime;
-        [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private LayerMask layerMask;
         private Rigidbody _rb;
         private ScoreView _scoreView;
         
@@ -32,7 +33,7 @@ namespace AmmoSystem
         
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.layer == _layerMask)
+            if (collision.gameObject.layer == 3)
             {
                 _scoreView.Score.ScoreGain();
                 Destroy(gameObject);
