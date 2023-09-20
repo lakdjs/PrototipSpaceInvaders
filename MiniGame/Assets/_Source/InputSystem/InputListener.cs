@@ -34,9 +34,9 @@ namespace InputSystem
 
         private void ReadMove()
         {
-                float horizontal = Input.GetAxisRaw(Horizontal);
-                Vector3 moveDirection = new Vector3(horizontal, 0f, 0f );
-                _playerInvoker.Move(moveDirection);
+             float horizontal = Input.GetAxisRaw(Horizontal);
+             Vector3 moveDirection = new Vector3(horizontal, 0f, 0f );
+             _playerInvoker.Move(moveDirection);
         }
 
         private void ReadRestart()

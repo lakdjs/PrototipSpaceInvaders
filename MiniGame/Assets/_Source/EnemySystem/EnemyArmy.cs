@@ -8,17 +8,24 @@ namespace EnemySystem
     {
         [SerializeField] private int rows;
         [SerializeField] private int cols;
-        [SerializeField] private List<Enemy> enemies;
+        [field: SerializeField] public List<Enemy> Enemies { get; private set; }
         [SerializeField] private float speedEnemy;
         
         private void Update()
         {
+            foreach (Enemy e in Enemies)
+            {
+                if (e == null)
+                {
+                    Enemies.Remove(e);
+                }
+            }
             Moving();
         }
 
         void Moving()
         {
-            foreach (Enemy e in enemies)
+            foreach (Enemy e in Enemies)
             {
                 if (e.Rb != null)
                 {
