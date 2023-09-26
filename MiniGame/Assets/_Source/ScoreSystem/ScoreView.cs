@@ -3,6 +3,7 @@ using PlayerSystem;
 using UnityEngine;
 using TMPro;
 using Unity.UI;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 
 namespace ScoreSystem
@@ -10,16 +11,15 @@ namespace ScoreSystem
     public class ScoreView : MonoBehaviour
     {
          [SerializeField] private TextMeshProUGUI text;
-         public Score Score { get; private set; }
 
          private void Start()
          {
-             Score = new Score();
+             text.text = $"score:";
          }
 
-        private void Update()
+         public void ScoreViewUpdate(int k)
         {
-             text.text = $"score:{Score.ScorePlayer}";
+             text.text = $"score:{k}";
         }
     }
 }

@@ -1,14 +1,21 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace ScoreSystem
 {
-    public class Score 
+    public class Score
     {
-        public int ScorePlayer { get; private set; }
-        
+        private int _scorePlayer;
+        private ScoreView _scoreView;
+
+        public Score(ScoreView scoreView)
+        {
+            _scoreView = scoreView;
+        }
         public void ScoreGain()
         {
-            ScorePlayer += 1;
+            ++_scorePlayer;
+            _scoreView.ScoreViewUpdate(_scorePlayer);
         }
     }
 }

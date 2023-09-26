@@ -1,7 +1,9 @@
 using System;
+using JetBrains.Annotations;
 using ScoreSystem;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace AmmoSystem
 {
@@ -10,13 +12,12 @@ namespace AmmoSystem
     {
         [SerializeField] private float speed;
         [SerializeField] private float destroyTime;
-        [SerializeField] private LayerMask layerMask;
+        [SerializeField] private LayerMask layerMask; 
         private Rigidbody _rb;
-        private ScoreView _scoreView;
+        
         
         private void Start()
         {
-            _scoreView = FindObjectOfType<ScoreView>();
             _rb = GetComponent<Rigidbody>();
             _rb.useGravity = false;
             Destroy(gameObject, destroyTime);
@@ -35,7 +36,6 @@ namespace AmmoSystem
         {
             if (collision.gameObject.layer == 3)
             {
-                _scoreView.Score.ScoreGain();
                 Destroy(gameObject);
             }
         }
