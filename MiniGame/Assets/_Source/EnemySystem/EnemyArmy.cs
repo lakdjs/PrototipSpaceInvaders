@@ -7,8 +7,10 @@ namespace EnemySystem
 {
     public class EnemyArmy : MonoBehaviour
     {
+        [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private int rows;
         [SerializeField] private int cols;
+        [SerializeField] private float step;
         [SerializeField] private ScoreView scoreView;
         [field: SerializeField] public List<Enemy> Enemies { get; private set; }
         [SerializeField] private float speedEnemy;
@@ -53,6 +55,6 @@ namespace EnemySystem
                     e.Rb.velocity = new Vector3(0, -speedEnemy, 0);
                 }
             }
-        } 
+        }
     }
 }
